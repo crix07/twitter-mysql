@@ -1,0 +1,12 @@
+<nav class="navbar navbar-light bg-light">
+    <a [routerLink]="['/']"><span class="navbar-brand mb-0 h1">Twitter App</span></a>
+    <p *ngIf="userservice.usuario">{{ userservice.usuario.correo }}</p>
+    <div *ngIf="!userservice.usuario">
+        <a [routerLink]="['/login']">Login</a>
+        <a [routerLink]="['/register']">Registro</a>
+
+    </div>
+
+
+    <a *ngIf="userservice.usuario" class="pointer" (click)="Cerrar()">Cerrar Sesion</a>
+</nav>
